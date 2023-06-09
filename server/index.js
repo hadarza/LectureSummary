@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const Grid = require('gridfs-stream');
+const { GridFSBucket } = require('mongodb');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -10,24 +10,21 @@ const DashBoard = require('./routes/DashBoard');
 const User = require('./routes/user');
 const File = require('./routes/File');
 
-var cors = require('cors');
+const cors = require('cors');
 
 // Connect to DB
-mongoose.connect(
-  'mongodb://127.0.0.1:27017/TeamsWonderDataBase',
-  { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('MongoDB is connected');
   })
   .catch((error) => {
     console.error('Error connecting to MongoDB:', error);
   });
-  mongoose.set('strictQuery', true);
 
 let gfs; // Declare the gfs variable
 
 mongoose.connection.once('open', () => {
-  gfs = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
+  gfs = new GridFSBucket(mongoose.connection.db, {
     bucketName: 'uploads'
   });
 });
