@@ -1,0 +1,848 @@
+*{
+    direction: rtl;
+    user-select: none;
+}
+
+.login-section{
+    background-color: $white;
+    box-shadow: #00000059 0px 5px 15px;
+    border-radius: 10px;
+    width:65rem;
+    height:40rem;
+    position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+    
+    margin: auto;
+    display: flex;
+
+
+    @media screen and (min-width: 900px) and (max-width:1400px) {
+        width: 50rem !important;
+    }
+
+    @media screen and (min-width:600px) and (max-width: 900px) {
+        width: 25rem !important;
+    }
+    @media screen and (max-width:600px){
+        width: 21rem !important;
+    }
+}
+
+.form-login{
+    @include flex;
+    flex-direction: column;
+}
+
+.section__Login{
+    height:100%;
+    background: #f8f8ff;
+    border-radius: 15px;
+    flex:1;
+}
+.section__info{
+    border-radius: 30px 0px 0px 30px;
+    height:100%;
+    @include flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex:1;
+    @media screen and (max-width: 900px) {
+        display: none;
+    }
+
+    .login__background{
+        width:50%;
+        height:80%;
+        position: absolute;
+        top:0vh;
+        left:0vw;
+        border-radius: 8px;
+    }
+    h1{
+        color: black;
+        font-weight: 600 !important;
+        padding: 4rem 2rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+    p,h2{
+        color: black;
+    }
+    h2{
+        margin-bottom: 0.5rem;
+    }
+}
+
+.line{
+    width:4rem;
+    height:0.01rem;
+    
+    border-top: 0.1rem solid $white;
+}
+
+.icon{
+    color: black;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-top: 0.2rem;
+}
+
+.login-title{
+    padding: 1rem 2rem;
+}
+
+.h5-info-form{
+    color:red;
+    text-align: center;
+    padding:1.5rem;
+}
+
+.Form__section__login{
+    @include flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 90%;
+}
+
+.errorSection{
+    height:2rem;
+    @include flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 5rem;
+    .errorMsg{
+        margin-right: 1rem;
+        color: $red;
+        font-weight: 500;
+        margin:0;
+    }
+}
+
+.section-name, .section-password,.section-message ,.section-phone{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 90%;
+    .LabelDiv{
+        font-size: 1rem;
+        width: 8rem;
+        margin-left: 0.5rem;
+        @include flex;
+        >label{
+            color:black;
+        }
+    }
+    >input, >textarea{
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border:none;
+        background-color: $lighten_gray;
+        padding-right: 0.5rem;
+        outline: none;
+        margin-bottom: 0.5rem;
+
+
+
+        &:focus {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            outline:1px solid $gray;
+          }
+    }
+
+    >textarea{
+        height:5rem;
+        resize: none;
+        width:20rem;
+    }
+}
+.btnSubmit{
+    background-color: $purple;
+    color:white;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    border:none;
+    transition: all 0.3s ease-in-out;
+    position:relative;
+    top:10vh;
+    &:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;;
+        color:black;
+        background-color: $purple_hover;
+        cursor: pointer;
+    }
+}
+.padding-2{
+    padding:1rem 2rem;
+}
+
+.btnSubmit.not-active{
+    color:black;
+    background-color: $lighten_gray;
+    &:hover{
+        background-color: $lighten_gray !important;
+        cursor: auto;
+        box-shadow: none;
+
+
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.App_army{
+    display: flex;
+}
+.dashboard{
+    height:100vh;
+    width: 70rem;
+    display: flex;
+}
+.filter_section{
+    border-left: 1px solid rgba(109,109,109,0.3);
+}
+.dashBoard_section{
+    flex:0.98;
+}
+
+.navbar-folders{
+    flex:0.2;
+    background-color:$white;
+    padding: 0.5rem;
+    .Btn-ShowFolder {
+        @include flex;
+        padding-bottom: 0rem;
+        box-sizing: border-box;
+        border-radius: 10px;
+        margin-top: 1rem;
+        width: 13rem;
+        height:3rem;
+        justify-content: space-around;
+
+        > li > a{
+            text-decoration: none;
+            color: black;
+           
+        }
+        &:hover{
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            background-color: $purple;
+            color:white;
+            >li > a{
+                color: white;
+            }
+        }
+    }
+}
+.active{
+    color: $color_font_select_folder;
+    background-color: $select_folder;
+}
+.li_filter{
+    width:4rem;
+}
+.h2-title-watch{
+    text-align: center;
+}
+
+.title-navbar{
+    @include flex;
+    justify-content: space-around;
+}
+
+.folders-ToShow{
+    height: 100%;
+    width:100%;
+    flex: 1.5;
+}
+
+/*Folder*/
+.folder{
+    margin-right: 3rem;
+    width: 13rem;
+    height:15rem;
+    background-color: $white;
+    border-radius: 5px;
+    border: 3px solid $grey_folder;
+
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+    >a > img{
+        cursor: pointer;
+        width:100%;
+        padding-top:1.2rem;
+    }
+
+    .folder__details{
+        margin-top: 1rem;
+        border-top: 2px solid $grey_folder;
+    }
+    .h3-title-folder{
+        text-align: center;
+        font-size: 0.9rem;
+    }
+}
+
+
+.box-folders{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+    height: 100%;
+
+}
+
+.settings-File{
+    margin:0.2rem;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.NavBar-settings{
+    flex-direction: column;
+    position: absolute;
+    background-color: rgb(246,246,246);
+    border-radius: 15px;
+    @include flex;
+    &:hover{
+        cursor: pointer;
+    }
+    >ul{
+        list-style-type: none;
+        padding: 0;
+        width: 9rem;
+        height: 1rem;
+        margin: 0.7rem 0.5rem;
+        >li{
+            text-align: center;
+            &:hover{
+                transition: all 0.3s ease-in-out;
+                cursor:pointer;
+                background: $white;
+            }
+        }
+    }
+}
+
+.editBtn
+{
+    position: absolute;
+    top: 2rem;
+    right: 0.5rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.delete-folder{
+    position: absolute;
+    top: 4rem;
+    right: 0.5rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.icons{
+    position: relative;
+}
+/*error form*/
+.error-Form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 50rem;
+    height: 40rem;
+    background: rgb(246,246,246);
+    border-radius: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.red{
+    color: $red;
+}
+
+/*X btn*/
+.btn-container{
+    width:3rem;
+    height:3rem;
+    position: absolute;
+    border:none;
+    background: transparent;
+}
+.close-container{
+  position: relative;
+  width:2rem;
+  height:3rem;
+
+  cursor: pointer;
+}
+
+.leftright{
+  height: 4px;
+  width: 30px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: $softorange;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.rightleft{
+  height: 4px;
+  width: 30px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: $softorange;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+
+.close{
+  margin: 60px 0 0 5px;
+  position: absolute;
+}
+
+.close-container:hover .leftright{
+  transform: rotate(-45deg);
+  background-color: $tomatored;
+}
+.close-container:hover .rightleft{
+  transform: rotate(45deg);
+  background-color: $tomatored;
+}
+.close-container:hover label{
+  opacity: 1;
+}
+
+.reactangle-object{
+    width: 10rem;
+    border-radius: 6px;
+    position:absolute;
+
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+}
+
+
+/*Hebet logo*/
+.Hebet_logo{
+    height: 5.5rem;
+    width:auto;
+
+
+    @media screen and (max-width:1200px) and (min-width:900px) {
+        height:3.8rem;
+    }
+    @media screen and (max-width:900px) {
+        height:3rem;
+    }
+}
+
+.WonderTeam_logo{
+    width: 6rem;
+}
+
+.eye-btn{
+    background: transparent;
+    border:none;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.Nav-DashBoard{
+    width:100%;  
+    @include flex;
+    justify-content: space-around;
+    position: relative;
+    right: 1rem;
+}
+
+.name{
+@include flex;
+flex:0.5;
+}
+
+.search{
+    position: relative;
+    flex:1;
+}
+
+.img-profile{
+    width:2rem;
+    padding:1rem;
+}
+.input-search{
+    padding-right: 1rem;
+    width: 30rem;
+    height:3rem;
+    border:none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    @media screen and (max-width: 900px) {
+        width:15rem;
+    }
+}
+
+.logos{
+    flex:1;
+    @include flex;
+    justify-content: left;
+}
+.down{
+    padding:1rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.search-icon{
+    cursor: pointer;
+    padding:0rem 0rem;
+    height:1em;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+/*edit mode btn*/
+.editMode{
+    width: 8rem;
+    height:3rem;
+    font-size: 1rem;
+    border-radius: 15px;
+    border:none;
+    background-color: rgba(109, 109, 109, 0.25);
+    margin: 1rem;
+    &:hover{
+        background-color: rgba(109,109,109,0.6);
+        cursor: pointer;
+    }
+}
+
+.btn-object{
+    width: 5rem;
+    height:5rem;
+    border-radius: 5px;
+    border:none;
+    margin:1rem;
+
+}
+
+.ArrayGame{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 45rem;
+    width:90rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    @include flex;
+    flex-direction: column;
+
+}
+.sections-div{
+    @include flex;
+    height:90%;
+    width:95%;
+}
+.array-section,.code-section{
+    flex:1;
+}
+
+.arrayObjects{
+    @include flex;
+}
+/*Array object input*/
+.input-array-game{
+    width: 6rem;
+    height:2rem;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    margin-left: 0.8rem;
+    margin-right: 0.3rem;
+
+}
+.wrap-array-object{
+    @include flex;
+    flex-direction: column;
+
+}
+.h3-array-object{
+    @include flex;
+    font-size: 1rem;
+}
+.h4-Array{
+    margin-top: 2rem;
+}
+
+.inputObject{
+    @include flex;
+    flex-direction: column;
+}
+.span-input{
+    font-size: 1rem;
+}
+
+/*Next back arrow */
+.nextBackArrows{
+    width:100%;
+    height:100%;
+}
+
+.download-option{
+    text-decoration: none;
+    color: black;
+    border-bottom: 0.5px solid rgb(0,0,0,0.2);
+    width: 85%;
+    text-align: center;
+    padding: 0.5rem 0rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.hidden{
+    visibility: hidden;
+}
+.show{
+    visibility: visible;
+}
+.Update-File{
+    width:50rem;
+    height: 40rem;
+    background-color: $white;
+    box-shadow: #00000059 0px 5px 15px;
+    border-radius: 10px;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2{
+        text-align: right;
+        padding:1rem;
+        direction: ltr;
+    }
+
+    input{
+        margin-right: 1rem;
+        width:13rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        border:none;
+    }
+}
+
+#formAdmin>div{
+    padding:1rem;
+    width:80%;
+    display: flex;
+
+    #input-name, #input-link{
+        padding-right: 0.5rem;
+    background-color: whitesmoke;
+    }
+    
+    label{
+        width:8rem;
+        display: inline-block;
+    }
+}
+
+/*Blog*/
+.Header-Blog{
+    background-color: $lighten_gray;
+    text-align: center;
+    padding:2rem;
+
+    >h1{
+    font-size: 2.5rem;
+    color: $purple;
+    font-weight: 600;
+    }
+}
+.code-section{
+    overflow-x:hidden;
+    overflow-y:auto;
+    background-color: $black_code;
+    height:auto;
+    padding:2rem;
+    width: 30rem;
+    color:white;
+    border-radius: 10px;
+
+    @media screen and (max-width: 900px) {
+        width:18rem;
+    }
+    &:hover{
+        background-color: $black_code_hover;
+    }
+    p{
+        direction: ltr !important;
+
+        @media screen and (max-width:900px){
+            font-size: 0.9rem;
+        }
+        @media screen and  (max-width:700px){
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.info{
+    background-color: $grey_folder;
+    padding: 1rem 2rem;
+}
+.copy-btn{
+    &:hover{
+        cursor: pointer;
+        color: $lighten_gray;
+    }
+}
+
+.copy-indication{
+    padding:0.5rem;
+    color: $softorange;
+}
+.info-header > span{
+    padding-right:0.5rem;
+    padding-left:0.5rem;
+
+}
+.info-header > span:nth-child(1){
+    border-left: 1px solid black;
+}
+
+.time-icon{
+    padding-right:0.3rem;
+}
+
+/*next & prev btns*/
+.next-btn{
+    width: 3rem;
+    position: absolute;
+    bottom: 1rem;
+    left:1rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.prev-btn{
+    width: 3rem;
+    height:3rem;
+    position: absolute;
+    bottom: 1rem;
+    left:6rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+.section-Blog{
+    position: relative;
+}
+
+/*profile div*/
+.div-profile{
+    position: absolute;
+    top:8vh;
+    right: 10vw;
+    width:6rem;
+    height: 1rem;
+    @include flex;
+    flex-direction: column;
+    background: black;
+    color:white;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &:hover{
+        color: white;
+        background:rgba(0, 0, 0, 0.8);
+
+        .dropdown li > a{
+            color:white;
+        }
+    }
+    .dropdown{
+        padding: 0;
+        width: 100%;
+    }
+    .dropdown li{
+        list-style-type: none;
+        width: 100%;
+        font-size: 1.2rem;
+       @include flex;
+
+        >a{
+            color:white;
+            text-decoration: none;
+        }
+
+    }
+}
+.div-profile:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid black;
+    right: 7px;
+    top: -20px;
+    &:hover{
+        border-bottom: 10px solid white;
+
+    }
+  }
+
+.btn-LogOut{
+    border: none;
+    transition: opacity .45s;
+    -webkit-transition: opacity .35s;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+/*Hebet href*/
+.href_hebet{
+    text-decoration: none;
+    color: black;
+}
+
+.notFound-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    top: 5rem;
+
+    >img{
+        width: 25rem;
+    }
+}
