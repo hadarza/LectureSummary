@@ -1,4 +1,9 @@
 /*contains all the resets, variables, mixins, and utility classes*/
+/*colors*/
+$blackBg : rgba(30, 30, 30,0.9);
+$grayLogIn: rgba(113, 113, 122, 1);
+$bgForms: #6172F3;
+
 $font-family: 'Noto Sans Hebrew';
 $font-family-english: 'Smooch Sans';
 /*colors*/
@@ -22,10 +27,3 @@ $color_font_select_folder : rgb(91, 114, 168);
 $softorange: #F4A259;
 $tomatored: #F25C66;
 $mediumblu: #1E272D;
-
-
-@mixin flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

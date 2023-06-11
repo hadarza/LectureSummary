@@ -1,10 +1,10 @@
 import React from 'react'
 
-const TitleAndInfoForm = ({title,info,href}) => {
+const TitleAndInfoForm = ({title,info}) => {
   return (
       <>
         <h1 className='login-title'>{title}</h1>
-        <a className='h5-info-form' href={`${href}`}>{info}</a>
+        <p className='sub-title-login'>{info}</p>
     </>
   )
 }

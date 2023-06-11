@@ -42,9 +42,8 @@ const LoginForm = () => {
   return (
     <>
     <TitleAndInfoForm 
-        title="התחברות"
-        info="אין לך משתמש? הירשם!"
-        href = "/register"
+        title="Login to your Account"
+        info="Welcome back! select method to log in"
     />
     <form className='form-login' onSubmit={handleSubmit((data) => {
         sendLoginPostRequest(data)

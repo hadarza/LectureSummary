@@ -104,6 +104,7 @@ const AdminFormFile = ({title,fileInfo}) => {
               postChangeFile(e);
               e.preventDefault()
             }
+            
           }}/> 
         </form>
   </div> 

@@ -12,8 +12,7 @@ import AdminUploadFile from './Components/Admin/AdminUploadFile';import 'codemir
 import './Components/Animate/monkai.css'
 import BlogArrays from './Components/Animate/StringsArrays/BlogArrays';
 import FuncCreating from './Components/Animate/FuncCreating/FuncCreating';
-
-import {Data} from './Components/Animate/StringsArrays/ArrayDB'
+import './scss/app.scss'
 function App() {
 
   useEffect(() => {

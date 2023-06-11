@@ -1,34 +1,6 @@
 *{
-    direction: rtl;
+    direction: ltr;
     user-select: none;
-}
-
-.login-section{
-    background-color: $white;
-    box-shadow: #00000059 0px 5px 15px;
-    border-radius: 10px;
-    width:65rem;
-    height:40rem;
-    position:absolute;
-	left:0;
-	right:0;
-	top:0;
-	bottom:0;
-    
-    margin: auto;
-    display: flex;
-
-
-    @media screen and (min-width: 900px) and (max-width:1400px) {
-        width: 50rem !important;
-    }
-
-    @media screen and (min-width:600px) and (max-width: 900px) {
-        width: 25rem !important;
-    }
-    @media screen and (max-width:600px){
-        width: 21rem !important;
-    }
 }
 
 .form-login{
@@ -36,45 +8,6 @@
     flex-direction: column;
 }
 
-.section__Login{
-    height:100%;
-    background: #f8f8ff;
-    border-radius: 15px;
-    flex:1;
-}
-.section__info{
-    border-radius: 30px 0px 0px 30px;
-    height:100%;
-    @include flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex:1;
-    @media screen and (max-width: 900px) {
-        display: none;
-    }
-
-    .login__background{
-        width:50%;
-        height:80%;
-        position: absolute;
-        top:0vh;
-        left:0vw;
-        border-radius: 8px;
-    }
-    h1{
-        color: black;
-        font-weight: 600 !important;
-        padding: 4rem 2rem;
-        font-size: 2rem;
-        text-align: center;
-    }
-    p,h2{
-        color: black;
-    }
-    h2{
-        margin-bottom: 0.5rem;
-    }
-}
 
 .line{
     width:4rem;
@@ -90,9 +23,7 @@
     padding-top: 0.2rem;
 }
 
-.login-title{
-    padding: 1rem 2rem;
-}
+
 
 .h5-info-form{
     color:red;
