@@ -2,6 +2,8 @@
 @use './base/reset';
 @use './Components/buttons';
 @use './Components/slider';
+@use './Components/forms';
+
 @use './layout/footer';
 @use './layout/grid';
 @use './layout/header';
@@ -27,49 +29,23 @@ body,html{
   font-size: 16px;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $inputcolor;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $inputcolor;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $inputcolor;
+}
+
+
 .form-login{
-  @include flex;
+  @include flex-row-all;
   flex-direction: column;
-}
-
-.section__Login{
-  height:100%;
-  background: #f8f8ff;
-  border-radius: 15px;
-  flex:1;
-}
-.section__info{
-  border-radius: 30px 0px 0px 30px;
-  height:100%;
-  @include flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex:1;
-  @media screen and (max-width: 900px) {
-      display: none;
-  }
-
-  .login__background{
-      width:50%;
-      height:80%;
-      position: absolute;
-      top:0vh;
-      left:0vw;
-      border-radius: 8px;
-  }
-  h1{
-      color: black;
-      font-weight: 600 !important;
-      padding: 4rem 2rem;
-      font-size: 2rem;
-      text-align: center;
-  }
-  p,h2{
-      color: black;
-  }
-  h2{
-      margin-bottom: 0.5rem;
-  }
 }
 
 .line{
@@ -86,7 +62,6 @@ body,html{
   padding-top: 0.2rem;
 }
 
-
 .h5-info-form{
   color:red;
   text-align: center;
@@ -94,15 +69,14 @@ body,html{
 }
 
 .Form__section__login{
-  @include flex;
+  @include flex-row-all;
   flex-direction: column;
   margin-top: 2rem;
-  width: 90%;
 }
 
 .errorSection{
   height:2rem;
-  @include flex;
+  @include flex-row-all;
   flex-direction: column;
   align-items: flex-start;
   padding-right: 5rem;
@@ -114,76 +88,9 @@ body,html{
   }
 }
 
-.section-name, .section-password,.section-message ,.section-phone{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-  position: relative;
-  width: 90%;
-  .LabelDiv{
-      font-size: 1rem;
-      width: 8rem;
-      margin-left: 0.5rem;
-      @include flex;
-      >label{
-          color:black;
-      }
-  }
-  >input, >textarea{
-      width: 100%;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      border:none;
-      background-color: $lighten_gray;
-      padding-right: 0.5rem;
-      outline: none;
-      margin-bottom: 0.5rem;
 
 
 
-      &:focus {
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-          outline:1px solid $gray;
-        }
-  }
-
-  >textarea{
-      height:5rem;
-      resize: none;
-      width:20rem;
-  }
-}
-.btnSubmit{
-  background-color: $purple;
-  color:white;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  border:none;
-  transition: all 0.3s ease-in-out;
-  position:relative;
-  top:10vh;
-  &:hover{
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;;
-      color:black;
-      background-color: $purple_hover;
-      cursor: pointer;
-  }
-}
-.padding-2{
-  padding:1rem 2rem;
-}
-
-.btnSubmit.not-active{
-  color:black;
-  background-color: $lighten_gray;
-  &:hover{
-      background-color: $lighten_gray !important;
-      cursor: auto;
-      box-shadow: none;
-
-
-  }
-}
 
 .form{
   display: flex;
@@ -210,7 +117,7 @@ body,html{
   background-color:$white;
   padding: 0.5rem;
   .Btn-ShowFolder {
-      @include flex;
+      @include flex-row-all;
       padding-bottom: 0rem;
       box-sizing: border-box;
       border-radius: 10px;
@@ -247,7 +154,7 @@ body,html{
 }
 
 .title-navbar{
-  @include flex;
+  @include flex-row-all;
   justify-content: space-around;
 }
 
@@ -307,7 +214,7 @@ body,html{
   position: absolute;
   background-color: rgb(246,246,246);
   border-radius: 15px;
-  @include flex;
+  @include flex-row-all;
   &:hover{
       cursor: pointer;
   }
@@ -461,14 +368,14 @@ opacity: 1;
 
 .Nav-DashBoard{
   width:100%;  
-  @include flex;
+  @include flex-row-all;
   justify-content: space-around;
   position: relative;
   right: 1rem;
 }
 
 .name{
-@include flex;
+@include flex-row-all;
 flex:0.5;
 }
 
@@ -496,7 +403,7 @@ flex:0.5;
 
 .logos{
   flex:1;
-  @include flex;
+  @include flex-row-all;
   justify-content: left;
 }
 .down{
@@ -547,12 +454,12 @@ flex:0.5;
   height: 45rem;
   width:90rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  @include flex;
+  @include flex-row-all;
   flex-direction: column;
 
 }
 .sections-div{
-  @include flex;
+  @include flex-row-all;
   height:90%;
   width:95%;
 }
@@ -561,7 +468,7 @@ flex:0.5;
 }
 
 .arrayObjects{
-  @include flex;
+  @include flex-row-all;
 }
 /*Array object input*/
 .input-array-game{
@@ -574,12 +481,12 @@ flex:0.5;
 
 }
 .wrap-array-object{
-  @include flex;
+  @include flex-row-all;
   flex-direction: column;
 
 }
 .h3-array-object{
-  @include flex;
+  @include flex-row-all;
   font-size: 1rem;
 }
 .h4-Array{
@@ -587,7 +494,7 @@ flex:0.5;
 }
 
 .inputObject{
-  @include flex;
+  @include flex-row-all;
   flex-direction: column;
 }
 .span-input{
@@ -761,7 +668,7 @@ flex:0.5;
   right: 10vw;
   width:6rem;
   height: 1rem;
-  @include flex;
+  @include flex-row-all;
   flex-direction: column;
   background: black;
   color:white;
@@ -785,7 +692,7 @@ flex:0.5;
       list-style-type: none;
       width: 100%;
       font-size: 1.2rem;
-     @include flex;
+     @include flex-row-all;
 
       >a{
           color:white;

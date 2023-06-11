@@ -1,47 +1,80 @@
-
-@mixin flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@mixin opacity($opacity) {
+    opacity: $opacity;
+   filter: alpha(opacity=($opacity * 100));
 }
 
-@mixin flex-col{
+@mixin flex-direction($direction)
+ {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @if $direction == column
+    {
+    -webkit-flex-direction:vertical;
+    -moz-flex-direction:vertical;
+    -ms-flex-direction:column;
+    -webkit-flex-direction:column;
+    flex-direction:column;
+    }
+    @else{
+    -webkit-flex-direction:horizontal;
+    -moz-flex-direction:horizontal;
+    -ms-flex-direction:row;
+    -webkit-flex-direction:row;
+    flex-direction:row;
+    }
+ }
+
+
+/*align items*/
+ @mixin align-items($value: stretch) {
+    @if $value == flex-start {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+    } @else if $value == flex-end {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+    } @else {
+        -webkit-box-align: $value;
+        -ms-flex-align: $value;
+    }
+    -webkit-align-items: $value;
+    -moz-align-items: $value;
+    align-items: $value;
+  }
+
+/* justify content */
+@mixin justify-content($value: flex-start) {
+    @if $value == flex-start {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+    } @else if $value == flex-end {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+    } @else if $value == space-between {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    } @else if $value == space-around {
+        -ms-flex-pack: distribute;        
+    } @else {
+        -webkit-box-pack: $value;
+        -ms-flex-pack: $value;
+    }
+    -webkit-justify-content: $value;
+    -moz-justify-content: $value;
+    justify-content: $value;
+  }
+
+@mixin flex-row-all{
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
 }
 
-@mixin flex-around-col{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+@mixin flex-col-all{
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
 }
 
-@mixin flex-around-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-@mixin flex-justify-col{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-@mixin flex-between-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-@mixin flex-evently-col{
-    display: flex;
-    align-items: stretch;
-    justify-content: space-evenly;
-    flex-direction: column;
-
-}
 @mixin circle-svg{
     border-radius: 50%;
     width: 2.7rem;

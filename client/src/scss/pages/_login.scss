@@ -4,7 +4,7 @@
 #login{
     background: $blackBg;
     height: 100vh;
-    @include flex;
+    @include  flex-row-all;
 }
 
 .login-section{
@@ -13,14 +13,17 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     background-color: white;
     border-radius: 20px;
-    @include flex;
+    @include  flex-row-all;
+    overflow: hidden;
 
 }
 
 .login-title{
     font-family: "Montserrat";
+    margin: 0;
 }
 .sub-title-login{
+    margin-top: 0.5rem;
     color: $grayLogIn;
     font-size: 1rem;
     font-weight: 400;
@@ -31,6 +34,10 @@
     background-color: $bgForms;
     height:100%;
     flex:1;
+    @include flex-row-all;
+    >img{
+        width: 80%;
+    }
 }
 
 .section__input{
@@ -38,4 +45,34 @@
     background: #f8f8ff;
     border-radius: 15px;
     flex:1;
+    @include flex-col-all;
+}
+
+/*input*/
+input{
+    box-sizing: border-box;
+    @include flex-row-all;
+    padding: 5px 3rem;
+    width: 18rem;
+    height: 3rem;
+    font-weight: 400;
+    background: $bgInput;
+    border: 2px solid $borderInput;
+    border-radius: 10px;
+    &:focus{
+        border: 2px solid paleturquoise !important;
+
+    }
+}
+
+.section-name,.section-password{
+    position: relative;
+    margin-bottom: 0.75rem;
+    @include flex-row-all;
+}
+
+/*icon inside input*/
+.icon-input{
+    position: absolute;
+    left: 0.5rem;
 }

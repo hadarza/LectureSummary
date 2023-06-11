@@ -1,10 +1,11 @@
-import React,{useDebugValue, useState,useContext,useEffect} from 'react'
+import React,{useState,useContext} from 'react'
 import {useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import TitleAndInfoForm from '../TitleAndInfoForm'
 import axios from 'axios'
 import {BsEyeFill,BsEyeSlashFill} from 'react-icons/bs'
 import AppWrap from '../../wrapper/AppWrap'
+import {images} from '../../constants/index'
 import { userDetailsContext } from '../../UserDetailsProvide';
 
 const LoginForm = () => {
@@ -51,16 +52,12 @@ const LoginForm = () => {
         )}>
         <div className='Form__section__login'>
             <div className='section-name'>
-                <div className='LabelDiv'>
-                    <label>שם הצוות</label>
-                </div>
-                <input {...register("Name",{required:'חובה להכניס שם משתמש'})} name="Name" placeholder="שם משתמש"/>
+                <img className='icon-input' src={images.envelope} alt="envelope"/>
+                <input {...register("Name",{required:'חובה להכניס שם משתמש'})} name="Name" placeholder="UserName"/>
             </div>
             <div className='section-password'>
-                <div className='LabelDiv'>
-                    <label>סיסמה</label>
-                </div>
-                <input type={passwordShown ? "text" : "password"} {...register("Password",{required:'חובה להכניס סיסמה ' , minLength:{value:6, message:'הסיסמה חייבת להכיל מעל 6 אותיות'}})} name="Password" placeholder="סיסמה"/>
+            <img className='icon-input' src={images.shieldSlash} alt="envelope"/>
+                <input type={passwordShown ? "text" : "password"} {...register("Password",{required:'חובה להכניס סיסמה ' , minLength:{value:6, message:'הסיסמה חייבת להכיל מעל 6 אותיות'}})} name="Password" placeholder="Password"/>
                     {passwordShown ?   
                         <button  className='eye-btn' onClick={() =>setPasswordShown(!passwordShown)}>
                             <BsEyeFill/>
@@ -79,11 +76,11 @@ const LoginForm = () => {
             {ShowErrorLogin ? <p>שם משתמש/הסיסמה שגוייה</p> : ""}
         </div>
         
-        <input className="btnSubmit padding-2" type="submit" value="התחבר"/>
+        <input className="btnSubmit padding-2" type="submit" value="LOG IN"/>
 
     </form>
     </>
   )
 }
 
-export default AppWrap(LoginForm,'login')
+export default AppWrap(LoginForm,'login',images.BgLogin)

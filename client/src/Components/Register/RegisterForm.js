@@ -63,7 +63,7 @@ useEffect(() => {
                 <div className='LabelDiv'>
                     <label>שם הצוות</label>
                 </div>
-                <input {...register("Name",{required:'חובה להכניס שם משתמש'})} name="Name" placeholder="שם משתמש"/>
+                <input {...register("Name",{required:'חובה להכניס שם משתמש'})} name="Name" placeholder="UserName"/>
             </div>
             <div className='section-password'>
                 <div className='LabelDiv'>
