@@ -78,8 +78,7 @@ body,html{
   height:2rem;
   @include flex-row-all;
   flex-direction: column;
-  align-items: flex-start;
-  padding-right: 5rem;
+  align-items: flex-end;
   .errorMsg{
       margin-right: 1rem;
       color: $red;

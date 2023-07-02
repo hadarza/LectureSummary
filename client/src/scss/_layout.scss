@@ -41,8 +41,8 @@
     height:2rem;
     @include flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-right: 5rem;
+    align-items: flex-end;
+    font-family: "Montserrat";
     .errorMsg{
         margin-right: 1rem;
         color: $red;

@@ -45,16 +45,23 @@ const UserRegister = async (req, res) => {
 
 const UserLogin = async (req, res) => {
   // Validate request body
+  const {Name,Password} = req.body.sendingData
+
   const { error } = LoginValidation(req.body.sendingData);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) 
+    return res.status(400).send(error.details[0].message);
 
   try {
     // Check if user exists
-    const existUser = await User.findOne({ Name: req.body.sendingData.Name });
-    if (!existUser) return res.status(400).send("User doesn't exist");
+    if( Name == ""  || Password == "") {
+      return res.status(400).send("Please fill in all fields")
+    }
+    const existUser = await User.findOne({ Name: Name });
+    if (!existUser) 
+      return res.status(400).send("User doesn't exist");
 
     // Check if password is correct
-    const validPass = await bcrypt.compare(req.body.sendingData.Password, existUser.Password);
+    const validPass = await bcrypt.compare(Password ,existUser.Password);
     if (!validPass) return res.status(400).send("Invalid password");
 
     // Create and assign a token
@@ -62,7 +69,6 @@ const UserLogin = async (req, res) => {
 
     res.status(200).send({
       Name: existUser.Name,
-      Unit: existUser.Unit,
       isAdmin: existUser.isAdmin,
       id: existUser._id,
       accessToken: accessToken
